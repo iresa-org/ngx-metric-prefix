@@ -7,7 +7,15 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "contributors:add": "all-contributors add",
+    "hooks:pre-commit": "node hooks/pre-commit.js",
+    "commit": "git-cz",
+    "release:first": "npm run release -- --first-release",
+    "build:lib": "ng build @iresa/ngx-metric-prefix",
+    "test:lib": "ng test @iresa/ngx-metric-prefix",
+    "release": "cd projects/iresa/ngx-metric-prefix && standard-version --infile ../../../CHANGELOG.md",
+    "test:lib:headless": "cross-env CI=true npm run test:lib"
   },
   "private": true,
   "dependencies": {
@@ -19,18 +27,28 @@
     "@angular/platform-browser": "~10.0.3",
     "@angular/platform-browser-dynamic": "~10.0.3",
     "@angular/router": "~10.0.3",
+    "@ngneat/lib": "^1.0.4",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.2",
+    "@angular-devkit/build-ng-packagr": "~0.1000.5",
     "@angular/cli": "~10.0.2",
     "@angular/compiler-cli": "~10.0.3",
-    "@types/node": "^12.11.1",
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-angular": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@ngneat/spectator": "latest",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "all-contributors-cli": "^6.8.1",
     "codelyzer": "^6.0.0",
+    "cross-env": "^5.2.0",
+    "git-cz": "^3.2.1",
+    "husky": "^3.0.1",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
@@ -38,9 +56,31 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "lint-staged": "^9.2.0",
+    "ng-packagr": "^10.0.0",
+    "prettier": "^2.0.5",
     "protractor": "~7.0.0",
+    "standard-version": "^8.0.2",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.9.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,ts,html,component.html}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS",
+      "pre-commit": "npm run hooks:pre-commit && lint-staged",
+      "pre-push": "npm run test:lib:headless"
+    }
   }
 }

@@ -15,6 +15,12 @@
     },
     {
       "path": "./e2e/tsconfig.json"
+    },
+    {
+      "path": "./projects/iresa/ngx-metric-prefix/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/iresa/ngx-metric-prefix/tsconfig.spec.json"
     }
-]
+  ]
 }
