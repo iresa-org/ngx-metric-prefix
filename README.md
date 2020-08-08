@@ -1,20 +1,17 @@
 # NGX-METRIC-PREFIX
 
 
-[![npm version](https://badge.fury.io/js/%40iresa%2Fngx-metric-prefix.svg)](https://badge.fury.io/js/%40iresa%2Fngx-imagely)
+[![npm version](https://badge.fury.io/js/%40iresa%2Fngx-metric-prefix.svg)](https://badge.fury.io/js/%40iresa%2Fngx-metric-prefix)
 [![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg?style=flat-square)]()
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)]()
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
-> Pretify big numbers with metric prefix in Angular 2+ apps
+> Pretify big numbers with metric prefix in modern Angular app
 
-An image rendering directive for Angular 2+ app. Demo: https://iresa-org.github.io/ngx-metric-prefix
+A fast, reliable pipe to format javascript numbers using only few significant digits and a metric prefix. Demo: https://iresa-org.github.io/ngx-metric-prefix
 
-## Features
-
-- ✅ Format big numbers with metric prefix
 
 ## Table of Contents
 
@@ -45,7 +42,7 @@ import { NgxMetricPrefixModule } from '@iresa/ngx-metric-prefix';
 export class AppModule {}
 ```
 
-Or register `NgxImagelyModule` to a feature module with following code:
+Or register `NgxMetricPrefixModule` to a feature module with following code:
 
 ```ts
 import { NgxMetricPrefixModule } from '@iresa/ngx-metric-prefix';
