@@ -10,7 +10,9 @@
 
 > Pretify big numbers with metric prefix in modern Angular app
 
-A fast, reliable pipe to format javascript numbers using only few significant digits and a metric prefix. Demo: https://iresa-org.github.io/ngx-metric-prefix
+A fast, reliable pipe to format javascript numbers using only few significant digits and a metric prefix. 
+
+Demo: https://iresa-org.github.io/ngx-metric-prefix
 
 
 ## Table of Contents
@@ -63,28 +65,35 @@ export class FeatureModule {}
 
 ## Usage
 
-### Loading Type
-
 ```html
 
 <p>{{ 123 | prefix }}</p>
 <!-- Display: 123 -->
+
 <p>{{ 1234 | prefix }}</p>
 <!-- Display: 1k -->
+
 <p>{{ 12345 | prefix }}</p>
 <!-- Display: 12k -->
+
 <p>{{ 123456 | prefix }}</p>
 <!-- Display: 123k -->
+
 <p>{{ 1234567 | prefix }}</p>
 <!-- Display: 1M -->
+
 <p>{{ 1234567890 | prefix }}</p>
 <!-- Display: 1G -->
+
 <p>{{ 1234567890123 | prefix }}</p>
 <!-- Display: 1T -->
+
 <p>{{ 1234567890123456 | prefix }}</p>
 <!-- Display: 1P -->
+
 <p>{{ 1234567890123456789 | prefix }}</p>
 <!-- Display: 1E -->
+
 <p>{{ 1234567890123456789012 | prefix }}</p>
 <!-- Display: 1235E -->
 
