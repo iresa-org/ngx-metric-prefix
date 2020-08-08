@@ -9,6 +9,20 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "angular",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "kxbui",
+      "name": "Khoi Bui",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5092371?v=4",
+      "profile": "https://github.com/kxbui",
+      "contributions": [
+        "code",
+        "design",
+        "doc",
+        "ideas",
+        "projectManagement"
+      ]
+    }
+  ],
   "contributorsPerLine": 7
 }
