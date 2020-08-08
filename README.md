@@ -1,57 +1,97 @@
-<p align="center">
- <img width="20%" height="20%" src="./logo.svg">
-</p>
+# NGX-METRIC-PREFIX
 
-<br />
 
+[![npm version](https://badge.fury.io/js/%40iresa%2Fngx-metric-prefix.svg)](https://badge.fury.io/js/%40iresa%2Fngx-imagely)
 [![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg?style=flat-square)]()
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)]()
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
-[![ngneat](https://img.shields.io/badge/@-ngneat-383636?style=flat-square&labelColor=8f68d4)](https://github.com/ngneat/)
-[![spectator](https://img.shields.io/badge/tested%20with-spectator-2196F3.svg?style=flat-square)]()
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
-> The Library Slogan
+> Pretify big numbers with metric prefix in Angular 2+ apps
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid assumenda atque blanditiis cum delectus eligendi ipsam iste iure, maxime modi molestiae nihil obcaecati odit officiis pariatur quibusdam suscipit temporibus unde.
-Accusantium aliquid corporis cupiditate dolores eum exercitationem illo iure laborum minus nihil numquam odit officiis possimus quas quasi quos similique, temporibus veritatis? Exercitationem, iure magni nulla quo sapiente soluta. Esse?
+An image rendering directive for Angular 2+ app. Demo: https://iresa-org.github.io/ngx-metric-prefix
 
 ## Features
 
-- ✅ One
-- ✅ Two
-- ✅ Three
+- ✅ Format big numbers with metric prefix
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [FAQ](#faq)
+- [Contributors](#contributors-)
 
 ## Installation
 
-### NPM
+From your project folder, run `ng add @iresa/ngx-metric-prefix`
 
-`npm install @iresa/ngx-metric-prefix --save-dev`
+This command will import `NgxMetricPrefixModule` into your `AppModule`:
 
-### Yarn
+```ts
+import { NgxMetricPrefixModule } from '@iresa/ngx-metric-prefix';
+ 
+@NgModule({
+  ...
+  imports: [
+    ...
+    
+    // NgxMetricPrefixModule
+    NgxMetricPrefixModule, 
+    ...
+  ],
+  ...
+})
+export class AppModule {}
+```
 
-`yarn add @iresa/ngx-metric-prefix --dev`
+Or register `NgxImagelyModule` to a feature module with following code:
+
+```ts
+import { NgxMetricPrefixModule } from '@iresa/ngx-metric-prefix';
+ 
+@NgModule({
+  ...
+  imports: [
+    ...
+    
+    // NgxMetricPrefixModule
+    NgxMetricPrefixModule, 
+    ...
+  ],
+  ...
+})
+export class FeatureModule {}
+```
 
 ## Usage
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid assumenda atque blanditiis cum delectus eligendi ipsam iste iure, maxime modi molestiae nihil obcaecati odit officiis pariatur quibusdam suscipit temporibus unde.
+### Loading Type
 
-```ts
-function helloWorld() {}
+```html
+
+<p>{{ 123 | prefix }}</p>
+<!-- Display: 123 -->
+<p>{{ 1234 | prefix }}</p>
+<!-- Display: 1k -->
+<p>{{ 12345 | prefix }}</p>
+<!-- Display: 12k -->
+<p>{{ 123456 | prefix }}</p>
+<!-- Display: 123k -->
+<p>{{ 1234567 | prefix }}</p>
+<!-- Display: 1M -->
+<p>{{ 1234567890 | prefix }}</p>
+<!-- Display: 1G -->
+<p>{{ 1234567890123 | prefix }}</p>
+<!-- Display: 1T -->
+<p>{{ 1234567890123456 | prefix }}</p>
+<!-- Display: 1P -->
+<p>{{ 1234567890123456789 | prefix }}</p>
+<!-- Display: 1E -->
+<p>{{ 1234567890123456789012 | prefix }}</p>
+<!-- Display: 1235E -->
+
 ```
-
-## FAQ
-
-## How to ...
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid assumenda atque blanditiis cum delectus eligendi ips
 
 ## Contributors ✨
 
@@ -71,3 +111,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+This project uses schematics from [@ngneat/lib](https://github.com/ngneat/lib) to generate boilerplate used for open source library. 
