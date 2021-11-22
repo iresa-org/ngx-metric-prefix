@@ -1,6 +1,6 @@
 {
   "name": "@iresa/ngx-metric-prefix",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "peerDependencies": {
     "@angular/common": "^10.0.6",
     "@angular/core": "^10.0.6"
