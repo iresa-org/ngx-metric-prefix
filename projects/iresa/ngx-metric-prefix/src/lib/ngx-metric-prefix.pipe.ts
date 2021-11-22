@@ -5,7 +5,7 @@ import { RANGES } from './prefix-range';
   name: 'prefix',
 })
 export class NgxMetricPrefixPipe implements PipeTransform {
-  transform(value: number, ...args: unknown[]): unknown {
+  transform(value: number | null | undefined, ...args: unknown[]): string {
     if (value === undefined || value === null) {
       return '';
     }
