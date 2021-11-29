@@ -18,7 +18,7 @@ import {
 } from '../utils';
 
 const libName = '@iresa/ngx-metric-prefix';
-const libVersion = '2.1.0';
+const libVersion = '2.1.1';
 const moduleName = 'NgxMetricPrefixModule';
 const modulePath = libName;
 
